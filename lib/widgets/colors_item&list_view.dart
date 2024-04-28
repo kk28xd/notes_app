@@ -37,6 +37,7 @@ class ColorsListView extends StatefulWidget {
 
 class _ColorsListViewState extends State<ColorsListView> {
   int Index = 0;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -48,7 +49,7 @@ class _ColorsListViewState extends State<ColorsListView> {
           child: GestureDetector(
             onTap: () {
               Index = index;
-              BlocProvider.of<AddNoteCubit>(context).color=KColors[index];
+              BlocProvider.of<AddNoteCubit>(context).color = KColors[index];
               setState(() {});
             },
             child: ColorItem(
