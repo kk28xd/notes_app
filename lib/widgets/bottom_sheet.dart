@@ -22,7 +22,7 @@ class MyBottomSheet extends StatefulWidget {
 }
 
 class _MyBottomSheetState extends State<MyBottomSheet> {
-  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
   final GlobalKey<FormState> formKey = GlobalKey();
   String? title, content;
 
@@ -57,7 +57,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
 
   Form addNoteForm() {
     return Form(
-      autovalidateMode: autovalidateMode,
+      autovalidateMode: autoValidateMode,
       key: formKey,
       child: Column(
         children: [
@@ -98,7 +98,7 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
                       date: DateFormat.yMMMd().add_jm().format(DateTime.now()),
                       color: Colors.blue.value));
                 } else {
-                  autovalidateMode = AutovalidateMode.always;
+                  autoValidateMode = AutovalidateMode.always;
                   setState(() {});
                 }
               },

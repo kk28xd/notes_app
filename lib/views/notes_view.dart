@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
+import 'package:notes_app/views/search_view.dart';
 import 'package:notes_app/widgets/custom_note_item.dart';
 import '../constants.dart';
 import '../widgets/bottom_sheet.dart';
@@ -44,16 +45,21 @@ class _NotesViewState extends State<NotesView> {
           color: Colors.black,
         ),
       ),
-      body: const SafeArea(
+      body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+          padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           child: Column(
             children: [
               CustomAppBar(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SearchView(),
+                  ));
+                },
                 icon: Icons.search,
                 title: 'Notes',
               ),
-              Expanded(child: NotesListView()),
+              const Expanded(child: NotesListView()),
             ],
           ),
         ),
